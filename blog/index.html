@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="SPQ,药韵知行,北京科技大学,北科大,科普,暑期实践"/>
+    <meta name="description" content="SPQ药韵知行科普实践团介绍网站" />
+    <title>首页</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0
+    }
+
+    .home {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .content {
+        perspective: 340px;
+        width: 100%;
+        position: relative;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+    }
+
+    span {
+        display: block;
+        text-align: left;
+    }
+
+    
+
+    @keyframes fly {
+        from {
+            transform: translateZ(0px);
+            opacity: .6;
+        }
+        to {
+            transform: translateZ(200px);
+            opacity: .8;
+        }
+    }
+
+    .title {
+        position: absolute;
+        display: flex;
+        justify-content: left;
+        left: 200px;
+        right: 0;
+        top: 300px;
+        margin: auto;
+        bottom: 0;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    .titles {
+        position: absolute;
+        display: flex;
+        justify-content: left;
+        left: 200px;
+        right: 0;
+        top: 380px;
+        margin: auto;
+        bottom: 0;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .icon {
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        position: absolute;
+        left: 49%;
+        bottom: 50px;
+        animation: downs 2s linear infinite;
+    }
+
+    @keyframes downs {
+        from {
+            transform: translatey(0px);
+            opacity: .6;
+        }
+        to {
+            transform: translatey(30px);
+            opacity: .8;
+        }
+    }
+
+    .ribbon {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        right: 300px;
+        top: 50px;
+        margin: auto;
+    }
+
+    .ribbon:after,
+    .ribbon:before {
+        margin-top: 0.5em;
+        content: "";
+        display: flex;
+    ;
+        border: 1.5em solid #fff;
+    }
+
+    .ribbon:after {
+        border-right-color: transparent;
+    }
+
+    .ribbon:before {
+        border-left-color: transparent;
+    }
+
+    .ribbon a:link,
+    .ribbon a:visited {
+        color: #000;
+        text-decoration: none;
+        height: 3.5em;
+        overflow: hidden;
+    }
+
+    .ribbon span {
+        background: #fff;
+        display: inline-block;
+        line-height: 3em;
+        padding: 0 1.5em;
+        margin-top: 0.5em;
+        position: relative;
+        -webkit-transition: background-color 0.2s, margin-top 0.2s;
+        /* Saf3.2+, Chrome */
+        -moz-transition: background-color 0.2s, margin-top 0.2s;
+        /* FF4+ */
+        -ms-transition: background-color 0.2s, margin-top 0.2s;
+        /* IE10 */
+        -o-transition: background-color 0.2s, margin-top 0.2s;
+        /* Opera 10.5+ */
+        transition: background-color 0.2s, margin-top 0.2s;
+    }
+
+    .ribbon a:hover span {
+        background: #FFD204;
+        margin-top: 0;
+    }
+
+    .ribbon span:before {
+        content: "";
+        position: absolute;
+        top: 3em;
+        left: 0;
+        border-right: 0.5em solid #9B8651;
+        border-bottom: 0.5em solid #fff;
+    }
+
+    .ribbon span:after {
+        content: "";
+        position: absolute;
+        top: 3em;
+        right: 0;
+        border-left: 0.5em solid #9B8651;
+        border-bottom: 0.5em solid #fff;
+    }
+
+    .introduce {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .introduce_item {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    .introduce_item_img {
+        width: 400px;
+        //height: 300px;
+    }
+
+    .introduce_item_title {
+        width: 300px;
+        font-size: 18px;
+        line-height: 36px;
+        align-self: center;
+        padding-left: 100px;
+    }
+
+    .introduce_item_titles {
+        width: 300px;
+        font-size: 18px;
+        line-height: 36px;
+        align-self: center;
+        padding-right: 100px;
+    }
+
+    audio {
+        position: fixed;
+        bottom: 50px;
+        right: 0;
+    }
+
+    .music_img {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 40px;
+        height: 30px;
+        animation: muscis 5s linear infinite;
+    }
+
+    @keyframes muscis {
+        from {
+            transform: rotate (0deg);
+            opacity: .6;
+        }
+        to {
+            transform: rotate(360deg);
+            opacity: .8;
+        }
+    }
+
+    .icons {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 400px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .icons_items {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        margin-top: 80px;
+        width: 200px;
+    }
+
+    .icons_items_imgs {
+        width: 200px;
+        margin-bottom: 30px;
+    }
+
+</style>
+<body>
+<div class="home">
+    <div class="content">
+        <div class="stars"></div>
+        <img class="bgc" src="./img/water.jpg" width="100%" alt="">
+        <h3 class="title">欢迎来到SPQ药韵知行科普实践团的介绍网站</h3>
+        <h3 class="titles">北科实践团中的一支神秘小队~~</h3>
+        <div class='ribbon'>
+            <a href='./index.html'><span>Home</span></a>
+            <a href='./about.html'><span>About</span></a>
+            <a href='./contact.html'><span>Contact</span></a>
+        </div>
+    </div>
+    <div class="introduce">
+
+        <div class="introduce_item">
+            <img class="introduce_item_img" src="./img/poster2.jpg" alt="">
+        </div>
+
+        <div class="introduce_item">
+            <img class="introduce_item_img" src="./img/1.jpg" alt="">
+            <span class="introduce_item_title"><b>指导学长：</b>大家好，我是来自理试2203的王铖泽，很荣幸能担任小队的指导学长，希望可以和大家一起圆满完成实践活动。</span>
+
+        </div>
+        <div class="introduce_item">
+
+            <span class="introduce_item_titles"><b>队长：</b>大家好，我是数学类2304班的苏可昕，本人热情开朗，快乐e人一枚，很高兴和大家一起开展本次社会实践活动。</span>
+            <img class="introduce_item_img" src="./img/2.jpg" alt="">
+        </div>
+        <div class="introduce_item">
+            <img class="introduce_item_img" src="./img/3.jpg" alt="">
+            <span class="introduce_item_title">大家好，我是井晓庆，来自能源2302班，是一个有时突然变e的i人小女孩，在每一次自我介绍都宣传自己的家乡大美青海夏都西宁，欢迎大家来玩，青海绝对不会让你失望，相信一切美好都会如约而至～</span>
+        </div>
+        <div class="introduce_item">
+            <span class="introduce_item_titles">我是来自自2303班的杨博凯，负责队伍里的外联工作。我热情活泼，乐于交际热爱体育运动与艺术，对于科学科普工作有很大热情。</span>
+            <img class="introduce_item_img" src="./img/4.jpg" alt="">
+        </div>
+        <div class="introduce_item">
+            <img class="introduce_item_img" src="./img/5.jpg" alt="">
+            <span class="introduce_item_title">大家好，我是通信2303班的宋佳美，来自山西。我性格开朗随和，日常生活中喜欢拍照，音乐和电影，敢于尝试新事物。我对中医药知识也很感兴趣，很荣幸能加入药韵华章实践团，有机会和新伙伴们一起向大家传递中医药知识。希望能在这次社会实践中共同学习，一起进步！请多多关心吧！</span>
+
+        </div>
+            <div class="introduce_item">
+            <span class="introduce_item_titles">大家好，我是药韵知行的成员马冰蕊，我的座右铭是：天行健，君子以自强不息。希望我们的社会实践可以帮助人多的人。</span>
+            <img class="introduce_item_img" src="./img/6.jpg" alt="">
+        </div>
+
+            <div class="introduce_item">
+            <img class="introduce_item_img" src="./img/7.jpg" alt="">
+            <span class="introduce_item_title">大家好，我是陈雅芝，来自外国语学院。是一个对外面世界充满好奇，对生活充满热情的学生。我热爱挑战，勇于尝试新事物，喜欢旅游。我相信，无论是语言还是创新，都是连接人与人的桥梁。我期待在这个团队中贡献自己的创意和努力，与大家一起探索未知，实现梦想。</span>
+        </div>
+
+            <div class="introduce_item">
+            <span class="introduce_item_titles">我是纳米U23班的宋依樵，喜欢打羽毛球、游泳和摄影。我会PS、PR、秀米等制作工具。我很乐意与大家多多交流，也希望我能尽量帮助到大家。</span>
+            <img class="introduce_item_img" src="./img/8.jpg" alt="">
+        </div>
+
+            <div class="introduce_item">
+            <img class="introduce_item_img" src="./img/9.jpg" alt="">
+            <span class="introduce_item_title">大家好！我是来自外国语学院的陈旭，很高兴进入SPQ实践团，希望能在服务社会中发光发热！</span>
+        </div>
+
+            <div class="introduce_item">
+            <span class="introduce_item_titles">我是来自通信2304的汪鼎新，幽默开朗，爱好编点程序，平时打打羽毛球，看看书。</span>
+            <img class="introduce_item_img" src="./img/10.jpg" alt="">
+        </div>
+
+            <div class="introduce_item">
+            <img class="introduce_item_img" src="./img/11.jpg" alt="">
+            <span class="introduce_item_title">大家好！我是来自能环学院的杨丽璇。喜欢电影，音乐，是一位坚定的BE美学爱好者。很高兴加入SPQ药韵知行科普实践团，跟大家一起探索中医药的奥秘。</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script>
+    let mucics = document.getElementById('audio')
+    document.body.addEventListener('mousemove', function() {
+        setTimeout(() => {
+            mucics.play();
+        }, 2000);
+    }, false);
+</script>
+
+</html>
+
+</html>
